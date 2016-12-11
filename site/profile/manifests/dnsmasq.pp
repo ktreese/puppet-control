@@ -29,4 +29,14 @@ class profile::dnsmasq {
     require => Package['dnsmasq'],
   }
 
+  network::interface { 'eth1':
+    ipaddress => '192.168.1.3',
+    netmask   => '255.255.255.0',
+    gateway   => '192.168.1.1',
+    bootproto => 'static',
+    onboot    => 'yes',
+    dns1      => '192.168.1.1',
+    dns2      => '8.8.8.8',
+  }
+
 }
