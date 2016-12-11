@@ -4,7 +4,7 @@ class profile::dnsmasq {
     ensure => present,
   }
 
-  file { '/etc/dnsmasq.d/3031.net'
+  file { '/etc/dnsmasq.d/3031.net':
     ensure  => present,
     content => 'puppet:///modules/profile/dnsmasq/3031.net',
     owner   => 'root',
@@ -14,7 +14,7 @@ class profile::dnsmasq {
     require => Package['dnsmasq'],
   }
 
-  file { '/etc/googledns.conf'
+  file { '/etc/googledns.conf':
     ensure  => present,
     content => 'puppet:///modules/profile/dnsmasq/googledns.conf',
     owner   => 'root',
