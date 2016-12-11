@@ -1,9 +1,9 @@
 class profile::base::linux::packages {
 
   $timekeeper = $::facts['os']['release']['major'] ? {
-    '6'     => 'ntpd',
+    '6'     => 'ntp',
     '7'     => 'chrony',
-    default => 'ntpd',
+    default => 'ntp',
   }
 
   package { $timekeeper:
