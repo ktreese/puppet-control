@@ -6,7 +6,7 @@ class profile::dnsmasq {
 
   file { '/etc/dnsmasq.d/3031.net':
     ensure  => present,
-    content => 'puppet:///modules/profile/dnsmasq/3031.net',
+    source  => 'puppet:///modules/profile/dnsmasq/3031.net',
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
@@ -16,7 +16,7 @@ class profile::dnsmasq {
 
   file { '/etc/googledns.conf':
     ensure  => present,
-    content => 'puppet:///modules/profile/dnsmasq/googledns.conf',
+    source  => 'puppet:///modules/profile/dnsmasq/googledns.conf',
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
