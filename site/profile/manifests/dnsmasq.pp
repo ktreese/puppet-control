@@ -37,6 +37,7 @@ class profile::dnsmasq {
     onboot    => 'yes',
     dns1      => '192.168.1.1',
     dns2      => '8.8.8.8',
+    defroute  => true,
   }
 
 }
