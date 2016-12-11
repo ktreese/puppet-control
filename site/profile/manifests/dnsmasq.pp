@@ -25,7 +25,7 @@ class profile::dnsmasq {
 
   service { 'dnsmasq':
     ensure  => running,
-    enabled => true,
+    enable  => true,
     require => Package['dnsmasq'],
   }
 
