@@ -2,4 +2,5 @@ domain=3031.net
 expand-hosts
 local=/3031.net/
 no-dhcp-interface=ens160
-resolv-file=/etc/googledns.conf
+server=8.8.8.8
+server=8.8.4.4

@@ -14,15 +14,6 @@ class profile::dnsmasq {
     require => Package['dnsmasq'],
   }
 
-  file { '/etc/googledns.conf':
-    ensure  => present,
-    source  => 'puppet:///modules/profile/dnsmasq/googledns.conf',
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0644',
-    before  => Package['dnsmasq'],
-  }
-
   service { 'dnsmasq':
     ensure  => running,
     enable  => true,
