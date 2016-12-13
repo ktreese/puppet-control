@@ -7,3 +7,6 @@ mod 'example42/network',                 '3.3.3'
 # Start Custom Modules
 mod 'ktreese/hosts',
   :git => 'https://github.com/ktreese/hosts.git'
+
+mod 'ktreese/dnsmasq',
+  :git => 'https://github.com/ktreese/dnsmasq.git'
