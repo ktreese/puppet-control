@@ -17,4 +17,12 @@ class profile::dnsmasq {
     notify       => Service['dnsmasq'],
     require      => Package['dnsmasq'],
   }
+
+  host { 'vcenter01.3031.net':
+    ensure       => present,
+    host_aliases => ['vcenter01'],
+    ip           => '192.168.1.10',
+    notify       => Service['dnsmasq'],
+    require      => Package['dnsmasq'],
+  }
 }
