@@ -1,6 +1,19 @@
 class profile::dnsmasq {
   include dnsmasq
 
+  # Completely manage /etc/hosts via Puppet
+  resources {'host':
+    purge => true,
+  } 
+    
+  # This means having to manage the localhost entry
+  # IPv6 is disabled so no need to declare a resource for ::1
+  host { 'localhost':
+    ensure       => present,
+    host_aliases => ['localhost.localdomain', 'localhost4', 'localhost4.localdomain4'],
+    ip           => '127.0.0.1',
+  }
+
   # Add hosts that cannot have puppet agent
   host { 'ts140.3031.net':
     ensure       => present,
