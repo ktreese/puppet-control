@@ -9,7 +9,7 @@ class profile::base::linux::environment {
   }
 
   file { '/root/dev.txt':
-    ensure => present,
+    ensure => absent,
   }
 
 }
