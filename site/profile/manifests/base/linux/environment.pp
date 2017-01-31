@@ -8,4 +8,8 @@ class profile::base::linux::environment {
     content => $facts['hostname'],
   }
 
+  file { '/root/dev.txt':
+    ensure => present,
+  }
+
 }
