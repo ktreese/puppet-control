@@ -23,6 +23,14 @@ class profile::dnsmasq {
     require      => Package['dnsmasq'],
   }
 
+  host { 'infoblox.3031.net':
+    ensure       => present,
+    host_aliases => ['infoblox'],
+    ip           => '192.168.1.4',
+    notify       => Service['dnsmasq'],
+    require      => Package['dnsmasq'],
+  }
+
   host { 'qnreese01.3031.net':
     ensure       => present,
     host_aliases => ['qnreese01'],
