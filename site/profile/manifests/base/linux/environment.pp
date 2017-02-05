@@ -1,7 +1,9 @@
-class profile::base::linux::environment {
+class profile::base::linux::environment (
+  $variable = 'hello world',
+) {
 
   file { '/root/hostname.txt':
-    ensure  => present,
+    ensure  => absent,
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
@@ -9,7 +11,9 @@ class profile::base::linux::environment {
   }
 
   file { '/root/dev.txt':
-    ensure => present,
+    ensure => absent,
   }
+
+  notify {"Message from ${::environment}.  Variable = ${variable}":}
 
 }
