@@ -1,5 +1,5 @@
 class profile::base::linux::environment (
-  $variable = 'hello world',
+  $variable = 'hello world from dev_apache feature branch',
 ) {
 
   file { '/root/hostname.txt':
